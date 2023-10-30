@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Registro De Usuarios</title>
+        <link rel="stylesheet" href="resource/css/estilosPaginaDeRegistro.css"/>
+    </h:head>
+    <h:body>
+        <div class="login">
+
+            <h:form>
+                   <p:panel header="registro">
+                        <p:panelGrid columns="2">
+
+                            <h:outputText value="nombre:" />
+                            <p:inputText value="#{controladorUsuario.usuario.nombre}"/>  
+
+                            <h:outputText value="apellidos:" />
+                            <p:inputText value="#{controladorUsuario.usuario.apellido}"/>  
+
+                            <h:outputText value="correo:" />
+                            <p:inputText value="#{controladorUsuario.usuario.correo}"/>  
+
+                            <h:outputText value="contraseña:" />
+                            <p:inputText value="#{controladorUsuario.usuario.contraseña}"/>
+
+                            <h:outputText value="Tipo de contacto"/>
+                            <p:inputText value="#{controladorUsuario.usuario.tipo_contacto}"/>
+
+
+                            <h:commandButton value="registrarme" action="#{controladorUsuario.guardar()}"/>
+                        </p:panelGrid>
+                    </p:panel>
+                    
+                
+                
+            </h:form>
+
+
+            
+
+                     </div>
+                    </h:body>
+                    </html>
+

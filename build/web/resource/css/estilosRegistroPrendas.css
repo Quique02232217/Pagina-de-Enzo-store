@@ -1,0 +1,10 @@
+.registrodeprendas{
+    text-align: center;
+    width: 850px;
+    margin: 50px auto; 
+    padding: 30px;
+    border: 5px solid #9EDDFF;
+    background-color: #A6F6FF;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #252B48;
+}

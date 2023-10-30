@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Catalogo</title>
+        <link rel="stylesheet" href="resource/css/estilosCatalogo.css"/>
+        
+    </h:head>
+    <h:body class="fondoTienda">
+        <p:graphicImage class="logoEnzo" value="/resource/images/LogoEnzo.png"/>
+        <h1 class="titulo">BIENVENIDOS A ENZO STORE</h1>
+        
+        <h:form>
+            <h:commandButton  id="botonregistrarusuario" class="boton" value="REGISTRAR" action="#{controladorPrenda.pasarARegistroDeUsuario()}"/>
+            <h:commandButton id ="botoniniciodesesion" class="boton" value="INICIAR SESION" action="#{controladorPrenda.pasarAInicioDeSesion()}"/>
+        
+        </h:form>
+        
+                   
+        <h:form>
+                 <div class="carruselCatalago">
+                
+            <div class="vistaproductos">
+                    <p:carousel  value="#{controladorPrenda.listaprenda}" var="prendaAMostrar" numVisible="4" circular="true">
+                        <p:commandLink oncomplete="PF('detalleDialogWidget').show();" process="@this">
+                            <div class="producto-item">
+                            <h:graphicImage library="images" name="sample-product.jpg" class="producto-imagen"/>
+                            <h:outputText value="#{prendaAMostrar.nombre}" class="producto-nombre"/>
+                            <h:outputText value="$#{prendaAMostrar.precio}" class="producto-precio"/>
+                                </div>
+                        </p:commandLink>
+
+                    </p:carousel>
+                </div>
+            </div>
+       
+                 
+           
+        
+                
+            <h:commandButton class="boton" value="Lugar para registrar prenda" action="#{controladorPrenda.pasarARegistrodePrendas()}"/>
+            <h:commandButton  class="boton" value="Subir" action="#{controladorPrenda.mostrarPrendas()}"/>
+        </h:form>    
+        
+        
+        
+        
+    </h:body>
+</html>
+
